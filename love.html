@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>给最爱的你</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            background: #ffe6f2;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            height: 100vh;
+        }
+
+        .slider {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 0, 128, 0.3);
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .text {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            text-align: center;
+            background: rgba(255, 0, 128, 0.7);
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 1.2em;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .message {
+            text-align: center;
+            padding: 20px;
+            color: #ff0066;
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+
+        #musicPlayer {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            color: white;
+            background: rgba(255, 0, 128, 0.7);
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="slider">
+            <!-- 在这里添加照片，修改src和text内容 -->
+            <div class="slide active">
+                <img src="start.jpg" >
+                <div class="text">请点击这里开启属于我们的回忆呀~<br>
+                    音乐就会自动响起<br>
+                    准备好了吗？<br>
+                    要开始咯龙彩琴</div>
+            </div>
+            <div class="slide">
+                <img src="photo1.jpg" >
+                <div class="text">故事的开始，我们的初遇~第一次记住名字叫龙彩琴的女孩</div>
+            </div>
+            <div class="slide">
+                <img src="photo2.jpg" >
+                <div class="text">这是我第一次这么担心一个女生，因为她说她害怕，所以我可以不睡觉</div>
+            </div>
+            <div class="slide">
+                <img src="photo3.jpg" >
+                <div class="text">竟然还有人假装生气的，但我很乐意哄她</div>
+            </div>
+            <div class="slide">
+                <img src="photo4.jpg" >
+                <div class="text">怎么还有人要让别人生气的呀</div>
+            </div>
+            <div class="slide">
+                <img src="1.jpg" >
+                <div class="text">那时候看见你发的照片，原来烟花下的你格外地美</div>
+            </div>
+            <div class="slide">
+                <img src="photo5.jpg" >
+                <div class="text">那时回老家，前一天晚上直接就睡了，让你不开心了，第二天是我第一次跟女孩打电话</div>
+            </div>
+            <div class="slide">
+                <img src="9.jpg" >
+                <div class="text">这张照片你那时候发给我，我真的很心动，很温柔</div>
+            </div>
+            <div class="slide">
+                <img src="photo6.jpg" >
+                <div class="text">这个时候我真的很紧张，特别是见你的时候心都快要跳出来了</div>
+            </div>
+            <div class="slide">
+                <img src="2.jpg" >
+                <div class="text">这是在去百色的高铁上偷偷拍的，属于我们俩的第一张合照，也是现在唯一的一张，以后我还想合照很多很多</div>
+            </div>
+            <div class="slide">
+                <img src="photo7.jpg" >
+                <div class="text">离开百色的时候我真的很难过，自己在那里偷偷哭却不想让你知道，因为真的很不舍得</div>
+            </div>
+            <div class="slide">
+                <img src="3.jpg" >
+                <div class="text">这是回来后的第一封写的信，想着下次见面的时候可以交到你手上，但我准备的不只是信</div>
+            </div>
+            <div class="slide">
+                <img src="photo8.jpg" >
+                <div class="text">这是第一次真正意义上地让你生气了，但我从不是什么贪玩的人</div>
+            </div>
+            <div class="slide">
+                <img src="photo9.jpg" >
+                <div class="text">情人节那天我特意踩着点，虽然没有什么用，但我想尽自己的一份心意</div>
+            </div>
+            <div class="slide">
+                <img src="8.jpg" >
+                <div class="text">那时候我看到就在想龙彩琴怎么这么可爱</div>
+            </div>
+            <div class="slide">
+                <img src="photo10.jpg" >
+                <div class="text">谢谢你愿意告诉我，我知道自己做的不够好，所幸还有改正的机会，我真的很珍惜你</div>
+            </div>
+            <div class="slide">
+                <img src="6.jpg" >
+                <div class="text">看见你说我真的真的很开心，就好像见到你一样，原来我也可以做好被你需要</div>
+            </div>
+            <div class="slide">
+                <img src="7.jpg" >
+                <div class="text">当我拿到鞋子的时候我都懵了，我从来没有想过，所以我真的很感激</div>
+            </div>
+            <div class="slide">
+                <img src="4.jpg" >
+                <div class="text">你朋友来了之后一下子你就开心了，我看见也为你感到开心</div>
+            </div>
+            <div class="slide">
+                <img src="5.jpg" >
+                <div class="text">看！这些都是我为龙彩琴打下的江山，能帮到她我真的很开心</div>
+            </div>
+            <div class="slide">
+                <img src="photo11.jpg" >
+                <div class="text">过于担心，就变得关心则乱了，我也想好好地控制住自己的情绪</div>
+            </div>
+            <div class="slide">
+                <img src="photo12.jpg" >
+                <div class="text">其实我一直都想说，我不会失去自我，我有自己想要追求的，但是我同样不想失去你，因为你真的很重要，所以我会去好好改变</div>
+            </div>
+            <div class="slide">
+                <img src="photo13.jpg" >
+                <div class="text">我不知道你还记不记得说等我赚钱就给你买相机，但我不想等了，它已经在路上了，这样你三月三去玩的时候就可以好好地拍照了</div>
+            </div>
+            <div class="slide">
+                <img src="photo14.jpg" >
+                <div class="text">今天是我们恋爱的第40天，我知道自己做的还不够好，有很多亏欠你的地方，虽然我是第一次谈恋爱，但我真的有在好好地学怎么爱你，因为我想让你亲口跟别人骄傲地说我是你的男朋友</div>
+            </div>
+            <div class="slide">
+                <img src="photo14.jpg" >
+                <div class="text">龙彩琴，我真的很想你了</div>
+            </div>
+
+        </div>
+        
+        <div class="message">
+            ❤️ 你就是我的唯一 ❤️<br>
+            不仅仅只是说说而已<br>
+            愿余生每个朝夕都有你
+        </div>
+
+        <audio id="bgMusic" loop>
+            <source src="love.mp3" type="audio/mpeg">
+
+        </audio>
+        <div id="musicPlayer" onclick="toggleMusic()">🎵</div>
+    </div>
+
+    <script>
+        // 图片轮播逻辑
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        // 自动轮播（每5秒切换）
+        setInterval(nextSlide, 10000);
+
+        // 音乐控制
+        const music = document.getElementById('bgMusic');
+        function toggleMusic() {
+            if (music.paused) {
+                music.play();
+                music.volume = 0.5;
+            } else {
+                music.pause();
+            }
+        }
+
+        // 首次点击页面自动播放音乐
+        document.body.addEventListener('click', function initMusic() {
+            music.play().catch(() => {});
+            music.volume = 0.5;
+            document.body.removeEventListener('click', initMusic);
+        });
+    </script>
+</body>
+</html>
